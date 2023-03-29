@@ -13,6 +13,7 @@ import ContactUs from "./admin/contactUs";
 import Home from "./main/home";
 import PersonalSharing from "./admin/personalSharing";
 const Interface = ({ id }) => {
+  
   return (
     <div>
       <Header />

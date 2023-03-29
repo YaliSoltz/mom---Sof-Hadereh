@@ -80,9 +80,7 @@ const Article = () => {
           <div className="card-content">
             <h2 className="card-title">{article.title}</h2>
             <div className="card-body">
-              {article.content?.split(".").map((word, index, row) => (
-                <p key={index}>{index === row.length - 1 ? "" : word + "."}</p>
-              ))}
+             <p> {article.content}</p>
             </div>
           </div>
         </div>

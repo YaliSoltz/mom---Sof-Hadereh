@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const { contactUs, personalSharing } = require("./routes");
+const morgan = require("morgan");
 require("dotenv").config();
 
 mongoose.set("strictQuery", true);
@@ -10,6 +11,7 @@ const port = 8002;
 
 app.use(cors());
 app.use(express.json());
+app.use(morgan("tiny"));
 
 mongoose // connection to the database
   .connect(process.env.CONNECT_URL)

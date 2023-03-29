@@ -14,6 +14,10 @@ a {
   font-family: "Noto Sans Hebrew";
 }
 
+p {
+  white-space: pre-wrap;
+}
+
 a {
   cursor: pointer;
   text-decoration: none;
@@ -281,7 +285,6 @@ textarea {
   align-items: center;
   padding: 3vh 0 0 0;
   margin-bottom: 5vh;
-
 }
 
 .contact-box h2 {
@@ -1136,25 +1139,21 @@ textarea {
   border-radius: 30px;
 }
 
-
-
-
 /* ------------------------carousel---------------------------- */
 
 .alice-carousel__prev-btn,
 .alice-carousel__next-btn {
-    position: absolute;
-    top: 30px;
-    font-size: 70px;
+  position: absolute;
+  top: 30px;
+  font-size: 70px;
 }
 
 .alice-carousel__next-btn {
-   right: -25vw
+  right: -25vw;
 }
 .alice-carousel__prev-btn {
-   left: -25vw
+  left: -25vw;
 }
-
 
 /* ----------------------------------------phone---------------------------------------------------- */
 @media (max-width: 700px) {

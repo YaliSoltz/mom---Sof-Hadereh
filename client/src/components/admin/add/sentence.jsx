@@ -23,14 +23,14 @@ const Sentence = () => {
           handleSubmit(e);
         }}
       >
-        {/* <input
+        <input
         type="text"
         placeholder="כותרת:"
         required
         onChange={(e) =>
           setNewSentence({ ...newSentence, title: e.target.value })
         }
-      /> */}
+      />
         <textarea
           cols="30"
           rows="10"

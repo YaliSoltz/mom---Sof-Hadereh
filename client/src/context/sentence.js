@@ -6,7 +6,7 @@ export const SentenceContext = createContext(); // the sentence context
 const SentenceProvider = ({ children }) => {
   const [sentences, setSentences] = useState([]); // all the sentences
   const [refresh, setRefresh] = useState(false); // active useEffect on each axios
-  const url = "https://backend-server-h1qj.onrender.com/api/sentences/";
+  const url = "http://localhost:8001/api/sentences/";
 
   // function that pulls all the sentences from the server
   const getSentences = async () => {

@@ -19,11 +19,16 @@ const App = () => {
       <Route path="/קצת-עליי" element={<Interface id={3} />} />
       <Route path="/המלצות-קריאה" element={<Interface id={4} />} />
       <Route path="*" element={<Interface id={5} />} />
-      {user.role === 'admin' && <Route path="/add" element={<Interface id={6} />} />}
-      {user.role === 'admin' && <Route path="/contact-us" element={<Interface id={7} />} />}
-      {user.role === 'admin' && <Route path="/personal-sharing" element={<Interface id={8} />} />}
-      <Route path="/l1o2g3i4n5" element={<Login/>} />
-
+      {user.role === "admin" && (
+        <Route path="/add" element={<Interface id={6} />} />
+      )}
+      {user.role === "admin" && (
+        <Route path="/contact-us" element={<Interface id={7} />} />
+      )}
+      {user.role === "admin" && (
+        <Route path="/personal-sharing" element={<Interface id={8} />} />
+      )}
+      <Route path="/l1o2g3i4n5" element={<Login />} />
     </Routes>
   );
 };

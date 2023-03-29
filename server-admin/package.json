@@ -11,12 +11,12 @@
     "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.21",
     "mongoose": "^6.9.0",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.20"
   },
   "name": "server-admin",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "keywords": [],
   "author": "",
   "license": "ISC",

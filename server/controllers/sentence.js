@@ -9,7 +9,7 @@ const getAllSentences = async (req, res) => {
 // add new sentence
 const addNewSentence = async (req, res) => {
   const body = req.body;
-  const { content } = body;
+  const { content, title } = body;
 
   //joi validation
   const { error } = joiSchema.validate(body);
@@ -17,7 +17,7 @@ const addNewSentence = async (req, res) => {
 
   // define the new sentence
   let sentence = new Sentence({
-    content
+    content, title
   });
 
   // add the sentence to database
@@ -33,17 +33,17 @@ const addNewSentence = async (req, res) => {
 const changeSentence = async (req, res) => {
   const id = req.params.id;
   const body = req.body;
-  const { content } = body;
+  const { content, title } = body;
 
   // check if there are inserted values when update
   if (Object.keys(body).length === 0)
     return res.status(400).send("must contain value");
 
-  // change the content at the user's choice
+  // change the content and title at the user's choice
   try {
     const sentence = await Sentence.updateOne(
       { _id: id },
-      { $set: { content } }
+      { $set: { content, title } }
     );
     res.status(201).send(sentence);
   } catch (error) {

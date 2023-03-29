@@ -6,7 +6,7 @@ export const ArticleContext = createContext(); // the article context
 const ArticleProvider = ({ children }) => {
   const [articles, setArticles] = useState([]); // all the articles
   const [refresh, setRefresh] = useState(false); // active useEffect on each axios
-  const url = "https://backend-server-h1qj.onrender.com/api/articles/";
+  const url = "http://localhost:8001/api/articles";
 
   // function that pulls all the articles from the server
   const getArticles = async () => {

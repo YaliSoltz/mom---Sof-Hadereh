@@ -89,9 +89,7 @@ const Lecture = () => {
           <div className="card-content">
             <h2 className="card-title">{lecture.title}</h2>
             <div className="card-body">
-              {lecture.content.split(".").map((word, index, row) => (
-                <p key={index}>{index === row.length - 1 ? "" : word + "."}</p>
-              ))}
+             <p>{lecture.content}</p>
             </div>
             <div className="order">
               <span className="btn">להזמנה</span>

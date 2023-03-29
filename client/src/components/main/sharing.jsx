@@ -29,28 +29,33 @@ const Sharing = () => {
 
   return (
     <div className="sharing-container">
-      {sharings.map((sharing, index) => (
-        <div className="sharing-card" key={index}>
-          <img src={treeImg} alt="" className="sharing-card-img" />
-          <div className="sharing-card-body">
-            {user.role === "admin" && (
-              <button
-                className="delete-btn"
-                onClick={() => deleteSharing(sharing._id)}
-                style={{ backgroundImage: `url(${removeIcon})` }}
-              ></button>
-            )}
-            <h2 className="sharing-card-title">שם: {sharing.name}</h2>
-            <h2 className="sharing-card-title">גיל: {sharing.age}</h2>
-            <h2 className="sharing-card-title">מצב משפחתי: {sharing.status}</h2>
-            <div className="sharing-card-info">
-              {sharing.content.split(".").map((word, index, row) => (
-                <p key={index}>{index === row.length - 1 ? "" : word + "."}</p>
-              ))}
+      {sharings.map(
+        (sharing, index) => (
+          console.log(sharing),
+          (
+            <div className="sharing-card" key={index}>
+              <img src={treeImg} alt="" className="sharing-card-img" />
+              <div className="sharing-card-body">
+                {user.role === "admin" && (
+                  <button
+                    className="delete-btn"
+                    onClick={() => deleteSharing(sharing._id)}
+                    style={{ backgroundImage: `url(${removeIcon})` }}
+                  ></button>
+                )}
+                <h2 className="sharing-card-title">שם: {sharing.name}</h2>
+                <h2 className="sharing-card-title">גיל: {sharing.age}</h2>
+                <h2 className="sharing-card-title">
+                  מצב משפחתי: {sharing.status}
+                </h2>
+                <div className="sharing-card-info">
+                  <p>{sharing.content}</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
+          )
+        )
+      )}
 
       {user.role != "admin" && (
         <button className="modal-open" onClick={() => setOpen(true)}>

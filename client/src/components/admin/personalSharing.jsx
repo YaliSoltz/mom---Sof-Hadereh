@@ -44,9 +44,7 @@ const PersonalSharing = () => {
             <h2 className="sharing-card-title">גיל: {sharing.age}</h2>
             <h2 className="sharing-card-title">מצב משפחתי: {sharing.status}</h2>
             <div className="sharing-card-info">
-              {sharing.content.split(".").map((word, index, row) => (
-                <p key={index}>{index === row.length - 1 ? "" : word + "."}</p>
-              ))}
+             <p>{sharing.content}</p>
             </div>
           </div>
         </div>
