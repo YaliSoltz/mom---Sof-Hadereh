@@ -65,7 +65,7 @@ const ContactUs = () => {
         <div className="input-wrapper">
           <input
             id="phone"
-            type="number"
+            type="text"
             className="field"
             placeholder="טלפון:"
             minLength={10}

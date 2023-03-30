@@ -16,7 +16,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const url = "https://backend-server-h1qj.onrender.com/login";
+    const url = "http://localhost:8001/login";
     try {
       const { data } = await axios.post(url, user);
       console.log(data);

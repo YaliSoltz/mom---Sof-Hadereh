@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const UserNavBar = () => {
+const UserNavBar = ({ id }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [chosenLink, setChosenLink] = useState("");
 
   const navigate = useNavigate();
 
@@ -21,9 +20,8 @@ const UserNavBar = () => {
       <div className={`nav-items ${isOpen && "open"}`}>
         <Link
           to="/קצת-עליי"
-          style={{ color: chosenLink === "bio" && "white" }}
+          style={{ color: id === "קצת-עליי" && "white" }}
           onClick={() => {
-            setChosenLink("bio");
             window.scrollTo(0, 0);
           }}
         >
@@ -31,9 +29,8 @@ const UserNavBar = () => {
         </Link>
         <Link
           to="/הרצאות"
-          style={{ color: chosenLink === "lectures" && "white" }}
+          style={{ color: id === "הרצאות" && "white" }}
           onClick={() => {
-            setChosenLink("lectures");
             window.scrollTo(0, 0);
           }}
         >
@@ -49,9 +46,8 @@ const UserNavBar = () => {
 
         <Link
           to="/בלוג"
-          style={{ color: chosenLink === "blog" && "white" }}
+          style={{ color: id === "בלוג" && "white" }}
           onClick={() => {
-            setChosenLink("blog");
             window.scrollTo(0, 0);
           }}
         >
@@ -59,9 +55,8 @@ const UserNavBar = () => {
         </Link>
         <Link
           to="/המלצות-קריאה"
-          style={{ color: chosenLink === "readings" && "white" }}
+          style={{ color: id === "המלצות-קריאה" && "white" }}
           onClick={() => {
-            setChosenLink("readings");
             window.scrollTo(0, 0);
           }}
         >
@@ -69,22 +64,22 @@ const UserNavBar = () => {
         </Link>
         <Link
           to="/מטופלים-משתפים"
-          style={{ color: chosenLink === "sharings" && "white" }}
+          style={{ color: id === "מטופלים-משתפים" && "white" }}
           onClick={() => {
-            setChosenLink("sharings");
             window.scrollTo(0, 0);
           }}
         >
           מטופלים משתפים
         </Link>
-        <a
-          onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo(0, 100000);
+        <Link
+          to="/יצירת-קשר"
+          style={{ color: id === "יצירת-קשר" && "white" }}
+          onClick={() => {
+            window.scrollTo(0, 0);
           }}
         >
           יצירת קשר
-        </a>
+        </Link>
       </div>
       <div
         className={`nav-toggle ${isOpen && "open"}`}

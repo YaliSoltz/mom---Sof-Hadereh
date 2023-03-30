@@ -320,9 +320,9 @@ textarea {
 }
 
 .contact-box .field:focus {
-  border: 2px solid rgba(30, 85, 250, 0.47);
   background-color: #fff;
 }
+
 .contact-box textarea::placeholder {
   font-size: 20px;
 }
@@ -884,12 +884,6 @@ textarea {
   margin: auto;
 }
 
-/* ------------------------------------------------------home------------------------------------------- */
-
-.home-sentence {
-  margin-right: 10vw;
-}
-
 /* --------------------------------------------------personal sharings------------------------- */
 
 .personalSharing-container {
@@ -1120,7 +1114,6 @@ textarea {
 .home {
   display: flex;
   gap: 10vw;
-  flex-wrap: wrap;
 }
 
 .home-title {
@@ -1129,14 +1122,16 @@ textarea {
 
 .home-sentence {
   font-size: 1.5em;
-  width: 300px;
-  text-align: right;
-  margin-right: 0;
+  margin-left: 4vw;
 }
 
 .home-img {
   margin-right: 4vw;
   border-radius: 30px;
+}
+
+.home-description {
+  margin-right: 4vw;
 }
 
 /* ------------------------carousel---------------------------- */

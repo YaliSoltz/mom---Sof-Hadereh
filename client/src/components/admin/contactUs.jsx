@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { ContactUsContext } from "./../../context/contactUs";
 
-const ContactUs = () => {
+const AdminContactUs = () => {
   const { contactUs, deleteContactUs } = useContext(ContactUsContext);
   const [refresh, setRefresh] = useState(false);
 
@@ -51,4 +51,4 @@ const ContactUs = () => {
     </div>
   );
 };
-export default ContactUs;
+export default AdminContactUs;

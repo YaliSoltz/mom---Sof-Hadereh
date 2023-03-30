@@ -9,34 +9,37 @@ import Reading from "./main/reading";
 import Footer from "./footer";
 import Page404 from "./main/page404";
 import Add from "./admin/add";
-import ContactUs from "./admin/contactUs";
 import Home from "./main/home";
 import PersonalSharing from "./admin/personalSharing";
+import AdminContactUs from "./admin/contactUs";
+import ContactUs from "./main/contactUs";
 const Interface = ({ id }) => {
   
   return (
     <div>
-      <Header />
+      <Header id={id} />
       <div className="Main">
         {(() => {
           switch (id) {
-            case 0:
+            case 'בלוג':
               return <Article />;
-            case 1:
+            case "מטופלים-משתפים":
               return <Sharing />;
-            case 2:
+            case "הרצאות":
               return <Lecture />;
-            case 3:
+            case "קצת-עליי":
               return <Bio />;
-            case 4:
+            case "המלצות-קריאה":
               return <Reading />;
-            case 5:
+            case "יצירת-קשר":
+              return <ContactUs/>;
+            case 1:
               return <Page404 />;
-            case 6:
+            case 2:
               return <Add />;
-            case 7:
-              return <ContactUs />;
-            case 8:
+            case 3:
+              return <AdminContactUs />;
+            case 4:
               return <PersonalSharing />;
             default:
               return <Home />;

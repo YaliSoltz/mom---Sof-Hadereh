@@ -13,20 +13,24 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Interface />} />
-      <Route path="/בלוג" element={<Interface id={0} />} />
-      <Route path="/מטופלים-משתפים" element={<Interface id={1} />} />
-      <Route path="/הרצאות" element={<Interface id={2} />} />
-      <Route path="/קצת-עליי" element={<Interface id={3} />} />
-      <Route path="/המלצות-קריאה" element={<Interface id={4} />} />
-      <Route path="*" element={<Interface id={5} />} />
+      <Route path="/בלוג" element={<Interface id={"בלוג"} />} />
+      <Route
+        path="/מטופלים-משתפים"
+        element={<Interface id={"מטופלים-משתפים"} />}
+      />
+      <Route path="/הרצאות" element={<Interface id={"הרצאות"} />} />
+      <Route path="/קצת-עליי" element={<Interface id={"קצת-עליי"} />} />
+      <Route path="/המלצות-קריאה" element={<Interface id={"המלצות-קריאה"} />} />
+      <Route path="/יצירת-קשר" element={<Interface id={"יצירת-קשר"} />} />
+      <Route path="*" element={<Interface id={1} />} />
       {user.role === "admin" && (
-        <Route path="/add" element={<Interface id={6} />} />
+        <Route path="/add" element={<Interface id={2} />} />
       )}
       {user.role === "admin" && (
-        <Route path="/contact-us" element={<Interface id={7} />} />
+        <Route path="/contact-us" element={<Interface id={3} />} />
       )}
       {user.role === "admin" && (
-        <Route path="/personal-sharing" element={<Interface id={8} />} />
+        <Route path="/personal-sharing" element={<Interface id={4} />} />
       )}
       <Route path="/l1o2g3i4n5" element={<Login />} />
     </Routes>

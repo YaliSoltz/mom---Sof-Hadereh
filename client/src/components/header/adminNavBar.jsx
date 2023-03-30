@@ -2,14 +2,14 @@ import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/user";
 import { PersonalSharingContext } from "../../context/personalSharing";
-import { ContactUsContext } from './../../context/contactUs';
-import image from '../../images/logout2.png'
+import { ContactUsContext } from "./../../context/contactUs";
+import image from "../../images/logout2.png";
 
 const AdminNavBar = () => {
   const { setToken, user } = useContext(UserContext);
   const { personalSharings } = useContext(PersonalSharingContext);
   const { contactUs } = useContext(ContactUsContext);
-  
+
   const navigate = useNavigate();
 
   const logout = () => {
@@ -21,7 +21,9 @@ const AdminNavBar = () => {
   return (
     <div>
       <div className="admin-navBar">
-        <a className="active"  onClick={() => window.scrollTo(0, 0)}>היי {user.name}</a>
+        <a className="active" onClick={() => window.scrollTo(0, 0)}>
+          היי {user.name}
+        </a>
 
         <Link to="/קצת-עליי" onClick={() => window.scrollTo(0, 0)}>
           קצת עליי
