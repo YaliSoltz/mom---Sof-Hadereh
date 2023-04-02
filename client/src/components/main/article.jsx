@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ArticleContext } from "../../context/article";
 import { UserContext } from "../../context/user";
 import pencilIcon from "../../images/pencil-black.png";
@@ -7,16 +7,90 @@ const Article = () => {
   const { articles, deleteArticle, changeArticle } = useContext(ArticleContext);
   const { user } = useContext(UserContext);
 
-  const dropdowns = document.getElementsByClassName("editor-dropdown"); // aray of all card editor-dropdown buttons
+  const [id, setId] = useState(); // the id of the card that is editing
+  const [key, setKey] = useState(); // the key that is editing: title or content
+  const [oldValue, setOldValue] = useState(); // the value that is editing
+  const [value, setValue] = useState(); // the new value
 
-  // funcion that change title/content or delete
+  const dropdowns = document.getElementsByClassName("editor-dropdown"); // aray of all card editor-dropdown buttons
+  const editorBtns = document.getElementsByClassName("editor-btn"); // aray of all card editor-btn buttons
+  const saveOrCancel = document.getElementsByClassName("saveOrCancel-div"); // aray of all card saveOrCancel divs
+
+  // function that change title/content or delete
   const edit = (id, key, value) => {
-    let text;
-    if (key === "title") text = "הכניסי כותרת חדשה";
-    else if (key === "content") text = "הכניסי תוכן חדש";
-    value = prompt(text, value);
-    if (value) changeArticle(id, { [key]: value });
-    console.log(value);
+    setId(id);
+    setKey(key);
+    setValue(value);
+    setOldValue(value);
+
+    // loop that hide all the editors pencil and show the chosen card saveOrCancel div
+    for (let i = 0; i < editorBtns.length; i++) {
+      editorBtns[i].style.display = "none";
+      if (editorBtns[i].id === id) {
+        saveOrCancel[i].style.display = "block";
+      }
+    }
+
+    let myKey = document.getElementById(value);
+    let myTextarea = document.createElement("textarea");
+    myTextarea.innerHTML = value;
+    myTextarea.id = value;
+    myTextarea.style.width = "100%";
+    myTextarea.style.height = "100%";
+    myTextarea.onchange = function (e) {
+      setValue(e.target.value);
+      this.id = this.value;
+    };
+    myKey.replaceWith(myTextarea);
+  };
+
+  // save the admin changes on the title/content
+  const save = () => {
+    if (window.confirm("האם את בטוחה?")) {
+      let myTextarea = document.getElementById(value);
+      let myKey;
+      if (key === "title") {
+        myKey = document.createElement("h2");
+        myKey.className = "card-title";
+      } else if (key === "content") myKey = document.createElement("p");
+
+      changeArticle(id, { [key]: value });
+      myKey.innerHTML = value;
+      myKey.id = value;
+
+      myTextarea.replaceWith(myKey);
+
+      // loop that show all the editors pencil and hide the chosen card saveOrCancel div
+      for (let i = 0; i < editorBtns.length; i++) {
+        editorBtns[i].style.display = "block";
+        if (editorBtns[i].id === id) {
+          saveOrCancel[i].style.display = "none";
+        }
+      }
+    }
+  };
+
+  // cancel the admin cahnges on the title/content
+  const cancel = () => {
+    let myTextarea = document.getElementById(value);
+    let myKey;
+    if (key === "title") {
+      myKey = document.createElement("h2");
+      myKey.className = "card-title";
+    } else if (key === "content") myKey = document.createElement("p");
+
+    myKey.innerHTML = oldValue;
+    myKey.id = oldValue;
+
+    myTextarea.replaceWith(myKey);
+
+    // loop that show all the editors pencil and hide the chosen card saveOrCancel div
+    for (let i = 0; i < editorBtns.length; i++) {
+      editorBtns[i].style.display = "block";
+      if (editorBtns[i].id === id) {
+        saveOrCancel[i].style.display = "none";
+      }
+    }
   };
 
   // function that open the editor dropdown
@@ -53,9 +127,11 @@ const Article = () => {
                 <button
                   onClick={() => openEditor(article._id)}
                   className="editor-btn"
+                  id={article._id}
                   style={{ backgroundImage: `url(${pencilIcon})` }}
                 ></button>
-                <div id={article._id} className="editor-dropdown">
+
+                <div className="editor-dropdown" id={article._id}>
                   <button
                     onClick={() => edit(article._id, "title", article.title)}
                   >
@@ -69,6 +145,18 @@ const Article = () => {
                     שינוי תוכן
                   </button>
                 </div>
+                <div
+                  className="saveOrCancel-div"
+                  id={article._id}
+                  style={{ display: "none" }}
+                >
+                  <button className="cancel-btn" onClick={() => cancel()}>
+                    ביטול
+                  </button>
+                  <button className="save-btn" onClick={() => save()}>
+                    שמירת שינויים
+                  </button>
+                </div>
               </div>
               <button
                 className="delete-btn"
@@ -78,9 +166,11 @@ const Article = () => {
             </>
           )}
           <div className="card-content">
-            <h2 className="card-title">{article.title}</h2>
+            <h2 className="card-title" id={article.title}>
+              {article.title}
+            </h2>
             <div className="card-body">
-             <p> {article.content}</p>
+              <p id={article.content}>{article.content}</p>
             </div>
           </div>
         </div>

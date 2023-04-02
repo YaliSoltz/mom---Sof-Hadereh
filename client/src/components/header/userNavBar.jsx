@@ -17,7 +17,7 @@ const UserNavBar = ({ id }) => {
         className="nav-logo"
         onClick={() => {
           navigate("/");
-            up();
+          up();
         }}
       >
         הסוף הטוב
@@ -27,7 +27,7 @@ const UserNavBar = ({ id }) => {
           to="/קצת-עליי"
           style={{ color: id === "קצת-עליי" && "white" }}
           onClick={() => {
-              up();
+            up();
           }}
         >
           קצת עליי
@@ -36,7 +36,7 @@ const UserNavBar = ({ id }) => {
           to="/הרצאות"
           style={{ color: id === "הרצאות" && "white" }}
           onClick={() => {
-              up();
+            up();
           }}
         >
           הרצאות
@@ -53,7 +53,7 @@ const UserNavBar = ({ id }) => {
           to="/בלוג"
           style={{ color: id === "בלוג" && "white" }}
           onClick={() => {
-              up();
+            up();
           }}
         >
           בלוג

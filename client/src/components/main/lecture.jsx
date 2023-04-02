@@ -17,6 +17,8 @@ const Lecture = () => {
   const [value, setValue] = useState(); // the new value
 
   const dropdowns = document.getElementsByClassName("editor-dropdown"); // aray of all card editor-dropdown buttons
+  const editorBtns = document.getElementsByClassName("editor-btn"); // aray of all card editor-btn buttons
+  const saveOrCancel = document.getElementsByClassName("saveOrCancel-div"); // aray of all card saveOrCancel divs
 
   const whatsappUrl =
     "https://api.whatsapp.com/send?phone=972504060456&text=היי%20עינת,%20אני%20מתעניין/ת%20בהרצאת%20כותרתואשמח%20לשמוע%20עוד%20פרטים.";
@@ -30,11 +32,13 @@ const Lecture = () => {
     setValue(value);
     setOldValue(value);
 
-    ///////////////////////////////////////////////////// fix
-    document.getElementsByClassName("editor-btn")[0].style.display = "none";
-    document.getElementsByClassName("saveOrCancel-btn")[0].style.display =
-      "block";
-    ///////////////////////////////////////////////////// fix
+    // loop that hide all the editors pencil and show the chosen card saveOrCancel div
+    for (let i = 0; i < editorBtns.length; i++) {
+      editorBtns[i].style.display = "none";
+      if (editorBtns[i].id === id) {
+        saveOrCancel[i].style.display = "block";
+      }
+    }
 
     let myKey = document.getElementById(value);
     let myTextarea = document.createElement("textarea");
@@ -64,9 +68,14 @@ const Lecture = () => {
       myKey.id = value;
 
       myTextarea.replaceWith(myKey);
-      document.getElementsByClassName("editor-btn")[0].style.display = "block";
-      document.getElementsByClassName("saveOrCancel-btn")[0].style.display =
-        "none";
+
+      // loop that show all the editors pencil and hide the chosen card saveOrCancel div
+      for (let i = 0; i < editorBtns.length; i++) {
+        editorBtns[i].style.display = "block";
+        if (editorBtns[i].id === id) {
+          saveOrCancel[i].style.display = "none";
+        }
+      }
     }
   };
 
@@ -84,9 +93,13 @@ const Lecture = () => {
 
     myTextarea.replaceWith(myKey);
 
-    document.getElementsByClassName("editor-btn")[0].style.display = "block";
-    document.getElementsByClassName("saveOrCancel-btn")[0].style.display =
-      "none";
+    // loop that show all the editors pencil and hide the chosen card saveOrCancel div
+    for (let i = 0; i < editorBtns.length; i++) {
+      editorBtns[i].style.display = "block";
+      if (editorBtns[i].id === id) {
+        saveOrCancel[i].style.display = "none";
+      }
+    }
   };
 
   // function that open the editor dropdown
@@ -123,13 +136,11 @@ const Lecture = () => {
                 <button
                   onClick={() => openEditor(lecture._id)}
                   className="editor-btn"
+                  id={lecture._id}
                   style={{ backgroundImage: `url(${pencilIcon})` }}
                 ></button>
-                <div className="saveOrCancel-btn" style={{ display: "none" }}>
-                  <button onClick={() => cancel()}>ביטול</button>
-                  <button onClick={() => save()}>שמירה</button>
-                </div>
-                <div id={lecture._id} className="editor-dropdown">
+
+                <div className="editor-dropdown" id={lecture._id}>
                   <button
                     onClick={() => edit(lecture._id, "title", lecture.title)}
                   >
@@ -141,6 +152,18 @@ const Lecture = () => {
                     }
                   >
                     שינוי תוכן
+                  </button>
+                </div>
+                <div
+                  className="saveOrCancel-div"
+                  id={lecture._id}
+                  style={{ display: "none" }}
+                >
+                  <button className="cancel-btn" onClick={() => cancel()}>
+                    ביטול
+                  </button>
+                  <button className="save-btn" onClick={() => save()}>
+                    שמירת שינויים
                   </button>
                 </div>
               </div>

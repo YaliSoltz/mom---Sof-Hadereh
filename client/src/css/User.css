@@ -1116,11 +1116,24 @@ textarea {
   gap: 10vw;
 }
 
+.home-sentence-container {
+  height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  gap: 5px;
+}
+
+.home-sentence {
+  border: 1px solid black;
+  position: relative;
+  margin: 0 0 40px 10px;
+}
+
 .home-title {
   font-size: 3em;
 }
 
-.home-sentence {
+.home-content {
   font-size: 1.5em;
   margin-left: 4vw;
 }

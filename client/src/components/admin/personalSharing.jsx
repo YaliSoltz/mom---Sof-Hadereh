@@ -10,7 +10,6 @@ const PersonalSharing = () => {
     PersonalSharingContext
   );
   const { addNewSharing } = useContext(SharingContext);
-  console.log(personalSharings);
 
   return (
     <div className="personalSharing-container">
@@ -44,7 +43,7 @@ const PersonalSharing = () => {
             <h2 className="sharing-card-title">גיל: {sharing.age}</h2>
             <h2 className="sharing-card-title">מצב משפחתי: {sharing.status}</h2>
             <div className="sharing-card-info">
-             <p>{sharing.content}</p>
+              <p>{sharing.content}</p>
             </div>
           </div>
         </div>

@@ -18,42 +18,48 @@ const AdminNavBar = () => {
     navigate("/");
   };
 
+  // take the page up to the start
+  function up() {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <div>
       <div className="admin-navBar">
-        <a className="active" onClick={() => window.scrollTo(0, 0)}>
+        <Link to="/" className="active" onClick={() => up()}>
           היי {user.name}
-        </a>
+        </Link>
 
-        <Link to="/קצת-עליי" onClick={() => window.scrollTo(0, 0)}>
+        <Link to="/קצת-עליי" onClick={() => up()}>
           קצת עליי
         </Link>
-        <Link to="/הרצאות" onClick={() => window.scrollTo(0, 0)}>
+
+        <Link to="/הרצאות" onClick={() => up()}>
           הרצאות
         </Link>
-        {/* <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+        {/* <Link to="/" onClick={() =>   up()}>
           ייעוץ משפחתי להוספיס בית
         </Link>
-        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+        <Link to="/" onClick={() =>   up()}>
           ביקורי בית פרטיים
         </Link> */}
-        <Link to="/בלוג" onClick={() => window.scrollTo(0, 0)}>
+        <Link to="/בלוג" onClick={() => up()}>
           בלוג
         </Link>
-        <Link to="/המלצות-קריאה" onClick={() => window.scrollTo(0, 0)}>
+        <Link to="/המלצות-קריאה" onClick={() => up()}>
           המלצות קריאה
         </Link>
-        <Link to="/מטופלים-משתפים" onClick={() => window.scrollTo(0, 0)}>
+        <Link to="/מטופלים-משתפים" onClick={() => up()}>
           מטופלים משתפים
         </Link>
-        <Link to="/add" onClick={() => window.scrollTo(0, 0)}>
+        <Link to="/add" onClick={() => up()}>
           הוספה
         </Link>
-        <Link to="/contact-us" onClick={() => window.scrollTo(0, 0)}>
+        <Link to="/contact-us" onClick={() => up()}>
           הודעות צור קשר
           <span className="badge"> {contactUs.length}</span>
         </Link>
-        <Link to="/personal-sharing" onClick={() => window.scrollTo(0, 0)}>
+        <Link to="/personal-sharing" onClick={() => up()}>
           שיתופים חדשים
           <span className="badge"> {personalSharings.length}</span>
         </Link>
