@@ -105,14 +105,14 @@ const Lecture = () => {
   // function that open the editor dropdown
   function openEditor(id) {
     for (let i = 0; i < dropdowns.length; i++) {
-      if (dropdowns[i].id == id) dropdowns[i].style.display = "block";
+      if (dropdowns[i].id === id) dropdowns[i].style.display = "block";
       else dropdowns[i].style.display = "none";
     }
   }
 
   // close all the dropdowns menu if the user clicks outside of them
   window.onclick = function (e) {
-    if (e.target.className != "editor-btn") {
+    if (e.target.className !== "editor-btn") {
       for (let i = 0; i < dropdowns.length; i++) {
         if (dropdowns[i].style.display === "block")
           dropdowns[i].style.display = "none";
@@ -187,18 +187,24 @@ const Lecture = () => {
                 className="icon"
                 href="tel:+972504060456"
                 style={{ backgroundImage: `url(${phone})` }}
+                rel="noreferrer"
+
               ></a>
               <a
                 className="icon"
                 href={emailUrl.replace(/כותרת/g, lecture.title)}
+                rel="noreferrer"
+
                 style={{ backgroundImage: `url(${email})` }}
               ></a>
               <a
-                className="icon"
                 href={whatsappUrl.replace("כותרת", lecture.title)}
                 target="_blank"
+                rel="noreferrer"
+                className="icon" 
                 style={{ backgroundImage: `url(${whatsApp})` }}
-              ></a>
+              >
+              </a>
             </div>
           </div>
         </div>

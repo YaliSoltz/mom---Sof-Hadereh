@@ -50,7 +50,7 @@ const Sharing = () => {
         </div>
       ))}
 
-      {user.role != "admin" && (
+      {user.role !== "admin" && (
         <button className="modal-open" onClick={() => setOpen(true)}>
           הוספת שיתוף
         </button>
