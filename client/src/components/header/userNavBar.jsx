@@ -6,13 +6,18 @@ const UserNavBar = ({ id }) => {
 
   const navigate = useNavigate();
 
+  // take the page up to the start
+  function up() {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <div className="Navbar">
       <span
         className="nav-logo"
         onClick={() => {
           navigate("/");
-          window.scrollTo(0, 0);
+            up();
         }}
       >
         הסוף הטוב
@@ -22,7 +27,7 @@ const UserNavBar = ({ id }) => {
           to="/קצת-עליי"
           style={{ color: id === "קצת-עליי" && "white" }}
           onClick={() => {
-            window.scrollTo(0, 0);
+              up();
           }}
         >
           קצת עליי
@@ -31,7 +36,7 @@ const UserNavBar = ({ id }) => {
           to="/הרצאות"
           style={{ color: id === "הרצאות" && "white" }}
           onClick={() => {
-            window.scrollTo(0, 0);
+              up();
           }}
         >
           הרצאות
@@ -48,7 +53,7 @@ const UserNavBar = ({ id }) => {
           to="/בלוג"
           style={{ color: id === "בלוג" && "white" }}
           onClick={() => {
-            window.scrollTo(0, 0);
+              up();
           }}
         >
           בלוג
@@ -57,7 +62,7 @@ const UserNavBar = ({ id }) => {
           to="/המלצות-קריאה"
           style={{ color: id === "המלצות-קריאה" && "white" }}
           onClick={() => {
-            window.scrollTo(0, 0);
+            up();
           }}
         >
           המלצות קריאה
@@ -66,7 +71,7 @@ const UserNavBar = ({ id }) => {
           to="/מטופלים-משתפים"
           style={{ color: id === "מטופלים-משתפים" && "white" }}
           onClick={() => {
-            window.scrollTo(0, 0);
+            up();
           }}
         >
           מטופלים משתפים
@@ -75,7 +80,7 @@ const UserNavBar = ({ id }) => {
           to="/יצירת-קשר"
           style={{ color: id === "יצירת-קשר" && "white" }}
           onClick={() => {
-            window.scrollTo(0, 0);
+            up();
           }}
         >
           יצירת קשר

@@ -4,9 +4,9 @@ body {
   word-wrap: break-word;
 }
 
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 p,
 textarea,

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { LectureContext } from "../../context/lecture";
 import { UserContext } from "../../context/user";
 import whatsApp from "../../images/whatsApp-white.png";
@@ -11,21 +11,82 @@ const Lecture = () => {
   const { lectures, deleteLecture, changeLecture } = useContext(LectureContext);
   const { user } = useContext(UserContext);
 
+  const [id, setId] = useState(); // the id of the card that is editing
+  const [key, setKey] = useState(); // the key that is editing: title or content
+  const [oldValue, setOldValue] = useState(); // the value that is editing
+  const [value, setValue] = useState(); // the new value
+
   const dropdowns = document.getElementsByClassName("editor-dropdown"); // aray of all card editor-dropdown buttons
 
   const whatsappUrl =
-    "https://api.whatsapp.com/send?phone=972543997375&text=היי%20יה-לי,%20אני%20מתעניין%20בהרצאת%20כותרת%20והייתי%20שמח%20לשמוע%20עוד%20פרטים.";
+    "https://api.whatsapp.com/send?phone=972504060456&text=היי%20עינת,%20אני%20מתעניין/ת%20בהרצאת%20כותרתואשמח%20לשמוע%20עוד%20פרטים.";
   const emailUrl =
-    "mailto:yali.soltz11@gmail.com?subject=כותרת&body=היי%20יה-לי,%20אני%20מתעניין%20בהרצאת%20כותרת%20והייתי%20שמח%20לשמוע%20עוד%20פרטים.";
+    "mailto:micasita102@gmail.com?subject=כותרת&body=היי%20עינת,%20אני%20מתעניין/ת%20בהרצאת%20כותרתואשמח%20לשמוע%20עוד%20פרטים.";
 
-  // funcion that change title/content or delete
+  // function that change title/content or delete
   const edit = (id, key, value) => {
-    let text;
-    if (key === "title") text = "הכניסי כותרת חדשה";
-    else if (key === "content") text = "הכניסי תוכן חדש";
-    value = prompt(text, value);
-    if (value) changeLecture(id, { [key]: value });
-    console.log(value);
+    setId(id);
+    setKey(key);
+    setValue(value);
+    setOldValue(value);
+
+    ///////////////////////////////////////////////////// fix
+    document.getElementsByClassName("editor-btn")[0].style.display = "none";
+    document.getElementsByClassName("saveOrCancel-btn")[0].style.display =
+      "block";
+    ///////////////////////////////////////////////////// fix
+
+    let myKey = document.getElementById(value);
+    let myTextarea = document.createElement("textarea");
+    myTextarea.innerHTML = value;
+    myTextarea.id = value;
+    myTextarea.style.width = "100%";
+    myTextarea.style.height = "100%";
+    myTextarea.onchange = function (e) {
+      setValue(e.target.value);
+      this.id = this.value;
+    };
+    myKey.replaceWith(myTextarea);
+  };
+
+  // save the admin changes on the title/content
+  const save = () => {
+    if (window.confirm("האם את בטוחה?")) {
+      let myTextarea = document.getElementById(value);
+      let myKey;
+      if (key === "title") {
+        myKey = document.createElement("h2");
+        myKey.className = "card-title";
+      } else if (key === "content") myKey = document.createElement("p");
+
+      changeLecture(id, { [key]: value });
+      myKey.innerHTML = value;
+      myKey.id = value;
+
+      myTextarea.replaceWith(myKey);
+      document.getElementsByClassName("editor-btn")[0].style.display = "block";
+      document.getElementsByClassName("saveOrCancel-btn")[0].style.display =
+        "none";
+    }
+  };
+
+  // cancel the admin cahnges on the title/content
+  const cancel = () => {
+    let myTextarea = document.getElementById(value);
+    let myKey;
+    if (key === "title") {
+      myKey = document.createElement("h2");
+      myKey.className = "card-title";
+    } else if (key === "content") myKey = document.createElement("p");
+
+    myKey.innerHTML = oldValue;
+    myKey.id = oldValue;
+
+    myTextarea.replaceWith(myKey);
+
+    document.getElementsByClassName("editor-btn")[0].style.display = "block";
+    document.getElementsByClassName("saveOrCancel-btn")[0].style.display =
+      "none";
   };
 
   // function that open the editor dropdown
@@ -64,6 +125,10 @@ const Lecture = () => {
                   className="editor-btn"
                   style={{ backgroundImage: `url(${pencilIcon})` }}
                 ></button>
+                <div className="saveOrCancel-btn" style={{ display: "none" }}>
+                  <button onClick={() => cancel()}>ביטול</button>
+                  <button onClick={() => save()}>שמירה</button>
+                </div>
                 <div id={lecture._id} className="editor-dropdown">
                   <button
                     onClick={() => edit(lecture._id, "title", lecture.title)}
@@ -87,16 +152,17 @@ const Lecture = () => {
             </>
           )}
           <div className="card-content">
-            <h2 className="card-title">{lecture.title}</h2>
+            <h2 className="card-title" id={lecture.title}>
+              {lecture.title}
+            </h2>
             <div className="card-body">
-             <p>{lecture.content}</p>
+              <p id={lecture.content}>{lecture.content}</p>
             </div>
             <div className="order">
               <span className="btn">להזמנה</span>
               <a
                 className="icon"
-                href="tel:+972543997375"
-                dir="ltr"
+                href="tel:+972504060456"
                 style={{ backgroundImage: `url(${phone})` }}
               ></a>
               <a
