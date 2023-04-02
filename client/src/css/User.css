@@ -255,10 +255,12 @@ textarea {
   border-radius: 4px;
   cursor: pointer;
   float: left;
+  transition: 0.5s;
 }
 
 .send:hover {
   background-color: #45a049;
+  border-radius: 25px;
 }
 
 /* -----after sending the sharing----- */
@@ -330,7 +332,7 @@ textarea {
 .contact-box .send {
   padding: 0.5em 1em;
   margin-top: 1vh;
-  background-color: #2ecc71;
+  background-color: #04aa6d;
   color: #fff;
   font-size: 1.1em;
   outline: none;
@@ -341,7 +343,7 @@ textarea {
 }
 
 .contact-box .send:hover {
-  background-color: #27ae60;
+  background-color: #45a049;
   border-radius: 25px;
 }
 
@@ -472,7 +474,6 @@ textarea {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   right: 2%;
-  text-decoration: underline;
   width: 10vw;
 }
 
