@@ -1129,7 +1129,6 @@ textarea {
 .home-title {
   /* font-size: 2em; */
   font-size: 100%;
-
 }
 
 .home-content {
@@ -1241,8 +1240,10 @@ textarea {
   .sharing-container {
     grid-template-columns: 1fr;
   }
+
+  .contact-box .field {
+    width: 80vw;
+  }
 }
 
-
 /* ------------------------------------------------test--------------------------------- */
-
