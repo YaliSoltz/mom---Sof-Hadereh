@@ -489,13 +489,9 @@ textarea {
 }
 
 .bio-text {
-  padding-top: 2vh;
+  padding-top: 10vh;
   max-width: 80vw;
   font-size: large;
-}
-
-.bio-title {
-  padding-top: 8vh;
 }
 
 .bio-img {
@@ -1131,7 +1127,9 @@ textarea {
 }
 
 .home-title {
-  font-size: 3em;
+  /* font-size: 2em; */
+  font-size: 100%;
+
 }
 
 .home-content {
@@ -1142,6 +1140,7 @@ textarea {
 .home-img {
   margin-right: 4vw;
   border-radius: 30px;
+  max-width: 100%;
 }
 
 .home-description {
@@ -1243,3 +1242,7 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ------------------------------------------------test--------------------------------- */
+

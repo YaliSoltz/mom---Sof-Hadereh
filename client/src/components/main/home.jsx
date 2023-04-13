@@ -114,14 +114,14 @@ const Home = () => {
   // function that open the editor dropdown
   function openEditor(id) {
     for (let i = 0; i < dropdowns.length; i++) {
-      if (dropdowns[i].id == id) dropdowns[i].style.display = "block";
+      if (dropdowns[i].id === id) dropdowns[i].style.display = "block";
       else dropdowns[i].style.display = "none";
     }
   }
 
   // close all the dropdowns menu if the user clicks outside of them
   window.onclick = function (e) {
-    if (e.target.className != "editor-btn") {
+    if (e.target.className !== "editor-btn") {
       for (let i = 0; i < dropdowns.length; i++) {
         if (dropdowns[i].style.display === "block")
           dropdowns[i].style.display = "none";
@@ -133,6 +133,7 @@ const Home = () => {
     <div className="home">
       <div style={{ flex: 1 }}>
         <img className="home-img" src={homeImg} alt="profile IMG" />
+
         <h2 className="home-description">
           לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קונסקטורר
           אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם.

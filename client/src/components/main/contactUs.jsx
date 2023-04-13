@@ -54,6 +54,8 @@ const ContactUs = () => {
             className="field"
             placeholder="שם:"
             name="name"
+            pattern="[A-Za-zא-ת]+"
+            title="ניתן להכניס אותיות בלבד"
             value={newContactUs.name}
             onChange={(e) =>
               setNewContactUs({ ...newContactUs, name: e.target.value })
@@ -65,10 +67,12 @@ const ContactUs = () => {
         <div className="input-wrapper">
           <input
             id="phone"
-            type="text"
+            type="tel"
             className="field"
             placeholder="טלפון:"
-            minLength={10}
+            pattern="[0-9]+"
+            maxLength={10}
+            title="ניתן להכניס מספרים בלבד"
             name="phoneNumber"
             value={newContactUs.phoneNumber}
             onChange={(e) =>

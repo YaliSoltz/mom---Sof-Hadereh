@@ -9,6 +9,7 @@ const UserNavBar = ({ id }) => {
   // take the page up to the start
   function up() {
     window.scrollTo(0, 0);
+    setIsOpen(false)
   }
 
   return (

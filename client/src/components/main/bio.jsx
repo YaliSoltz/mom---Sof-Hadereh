@@ -9,7 +9,6 @@ const Bio = () => {
   return (
     <div className="bio">
       <div className="bio-container">
-        <h1 className="bio-title">אז מי אני?</h1>
         <p className="bio-text">{content}</p>
       </div>
       <img className="bio-img" src={profile} alt="profile" />
