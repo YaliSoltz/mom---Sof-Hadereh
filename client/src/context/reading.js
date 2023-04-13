@@ -33,7 +33,10 @@ const ReadingProvider = ({ children }) => {
               {user.role === "admin" && (
                 <span
                   className="delete-book"
-                  onDoubleClick={() => deleteReading(reading._id)}
+                  onClick={() =>
+                    window.confirm("האם את בטוחה שאת רוצה למחוק?") &&
+                    deleteReading(reading._id)
+                  }
                 >
                   &times;
                 </span>
@@ -50,7 +53,10 @@ const ReadingProvider = ({ children }) => {
               {user.role === "admin" && (
                 <span
                   className="delete-book"
-                  onDoubleClick={() => deleteReading(reading._id)}
+                  onClick={() =>
+                    window.confirm("האם את בטוחה שאת רוצה למחוק?") &&
+                    deleteReading(reading._id)
+                  }
                 >
                   &times;
                 </span>
@@ -67,7 +73,10 @@ const ReadingProvider = ({ children }) => {
               {user.role === "admin" && (
                 <span
                   className="delete-book"
-                  onDoubleClick={() => deleteReading(reading._id)}
+                  onClick={() =>
+                    window.confirm("האם את בטוחה שאת רוצה למחוק?") &&
+                    deleteReading(reading._id)
+                  }
                 >
                   &times;
                 </span>
@@ -84,7 +93,10 @@ const ReadingProvider = ({ children }) => {
               {user.role === "admin" && (
                 <span
                   className="delete-book"
-                  onDoubleClick={() => deleteReading(reading._id)}
+                  onClick={() =>
+                    window.confirm("האם את בטוחה שאת רוצה למחוק?") &&
+                    deleteReading(reading._id)
+                  }
                 >
                   &times;
                 </span>

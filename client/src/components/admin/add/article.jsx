@@ -6,10 +6,15 @@ const Article = () => {
 
   const [newArticle, setNewArticle] = useState({}); // new article object
 
+  const loader = document.getElementById("loader"); // the circle loader
+
   // function that add new article and reset the form
   const handleSubmit = async (e) => {
     e.preventDefault();
+    loader.style.display = "block";
     await addNewArticle(newArticle); // add newArticle to database
+    loader.style.display = "none";
+
     document.getElementById("form").reset(); // reset the form
   };
 
@@ -27,6 +32,9 @@ const Article = () => {
 
   return (
     <div className="add-form">
+      <svg id="loader" viewBox="25 25 50 50">
+        <circle r="20" cy="50" cx="50"></circle>
+      </svg>
       <h2>הוספת מאמר חדש</h2>
       <form
         id="form"

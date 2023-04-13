@@ -6,6 +6,7 @@ import Login from "./login";
 import "./css/User.css";
 import "./css/Admin.css";
 import "./css/Login.css";
+import "./css/Extra.css";
 
 const App = () => {
   const { user } = useContext(UserContext);

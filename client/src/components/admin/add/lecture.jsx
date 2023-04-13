@@ -6,11 +6,14 @@ const Lecture = () => {
 
   const [newLecture, setNewLecture] = useState({}); // new lecture object
 
+  const loader = document.getElementById("loader"); // the circle loader
+
   // function that add new lecture and reset the form
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    loader.style.display = "block";
     await addNewLecture(newLecture); // add newLecture to database
+    loader.style.display = "none";
     document.getElementById("form").reset(); // reset the form
   };
 
@@ -29,6 +32,9 @@ const Lecture = () => {
 
   return (
     <div className="add-form">
+      <svg id="loader" viewBox="25 25 50 50">
+        <circle r="20" cy="50" cx="50"></circle>
+      </svg>
       <h2>הוספת הרצאה חדשה</h2>
       <form
         id="form"

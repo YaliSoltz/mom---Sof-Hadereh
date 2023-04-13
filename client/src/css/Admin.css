@@ -105,8 +105,7 @@ td {
   background: #ffffff;
   margin: 50px auto;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
-  -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
-  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+  position: relative;
 }
 .add-form h2 {
   background: #4d4d4d;
@@ -118,7 +117,8 @@ td {
   margin: -30px -30px 30px -30px;
 }
 
-.add-form input, select {
+.add-form input,
+select {
   box-sizing: border-box;
   width: 100%;
   padding: 7px;

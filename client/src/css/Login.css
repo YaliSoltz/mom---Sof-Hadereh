@@ -9,6 +9,7 @@
   width: 400px;
   background: white;
   border-radius: 10px;
+  position: relative;
 }
 
 .center h1 {
@@ -54,7 +55,6 @@
   color: #2691d9;
   transition: 0.5s;
 }
-
 
 .forgot-invalid {
   margin: -5px 0 20px 5px;
@@ -111,5 +111,3 @@ input.login:hover {
   background: #2a88c7;
   transition: 0.5s;
 }
-
-

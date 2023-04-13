@@ -6,11 +6,14 @@ const Reading = () => {
 
   const [newReading, setNewReading] = useState({}); // new reading object
 
+  const loader = document.getElementById("loader"); // the circle loader
+
   // function that add new reading and reset the form
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    loader.style.display = "block";
     await addNewReading(newReading); // add newReading to database
+    loader.style.display = "none";
     document.getElementById("form").reset(); // reset the form
   };
 
@@ -29,6 +32,9 @@ const Reading = () => {
   return (
     <div>
       <div className="add-form">
+        <svg id="loader" viewBox="25 25 50 50">
+          <circle r="20" cy="50" cx="50"></circle>
+        </svg>
         <h2>הוספת המלצת קריאה חדשה</h2>
 
         <form

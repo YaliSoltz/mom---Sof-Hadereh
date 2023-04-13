@@ -12,9 +12,12 @@ const Login = () => {
   const [showPassEye, setShowPassEye] = useState(false); // show password or not
   const navigate = useNavigate();
 
+  const loader = document.getElementById("loader"); // the circle loader
+
   // login function that add token to localstorage
   const handleSubmit = async (e) => {
     e.preventDefault();
+    loader.style.display = "block";
 
     const url = "http://localhost:8001/login";
     try {
@@ -24,6 +27,7 @@ const Login = () => {
       setToken(data);
       navigate("/");
     } catch (error) {
+      loader.style.display = "none";
       setShow(true);
       console.log(error.message);
     }
@@ -43,6 +47,9 @@ const Login = () => {
   return (
     <div className="login-main">
       <div className="center">
+        <svg id="loader" viewBox="25 25 50 50">
+          <circle r="20" cy="50" cx="50"></circle>
+        </svg>
         <h1>כניסת מנהלת </h1>
         <form
           id="form"
@@ -77,7 +84,7 @@ const Login = () => {
               סיסמא או אימייל שגויים
             </article>
           </div>
-          <input type="submit" value="כניסה" className="login" />
+          <input type="submit" value="כניסה" className="login"></input>
         </form>
       </div>
     </div>
