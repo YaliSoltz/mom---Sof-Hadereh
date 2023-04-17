@@ -87,9 +87,11 @@ const Sharing = () => {
 
                 <input
                   name="age"
-                  type="number"
+                  type="text"
                   placeholder="גיל:"
-                  min={1}
+                  pattern="[0-9]+"
+                  maxLength={3}
+                  title="ניתן להכניס מספרים בלבד"
                   required
                   onChange={(e) =>
                     setNewPersonalSharing({
