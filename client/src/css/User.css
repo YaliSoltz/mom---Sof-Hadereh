@@ -24,16 +24,25 @@ a {
 }
 
 .Main {
-  min-height: 90vh;
+  min-height: 100vh;
   background: linear-gradient(to top, #98b9b4, #e4e4c0);
   padding-top: 10vh;
 }
 
-.Footer {
+/* --------------------------------------------created by------------------------------------------- */
+
+.created-by {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  background: linear-gradient(to top, #b0b0a7, #9ebeba);
+  justify-content: center;
+  width: 100%;
+  height: 4vh;
+  background: black;
+}
+
+.credit-text {
+  font-size: 22px;
+  color: #f9dd95;
 }
 
 /* ----------------------------------------personalSharing------------------------------------- */
@@ -272,6 +281,13 @@ textarea {
 }
 
 /* ----------------------------------------contactUs------------------------- */
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .contact-box .error {
   color: rgba(219, 12, 12, 0.879);
   font-size: 14px;
@@ -280,15 +296,6 @@ textarea {
   right: 4px;
   bottom: 4px;
 }
-
-.contact-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3vh 0 0 0;
-  margin-bottom: 5vh;
-}
-
 .contact-box h2 {
   position: relative;
   padding: 0 0 10px;
@@ -308,12 +315,11 @@ textarea {
 
 .contact-box .field {
   width: 30vw;
-  max-height: 15vh;
+  max-height: 12vh;
   border: 2px solid rgba(0, 0, 0, 0);
   background-color: rgba(230, 230, 230, 0.6);
   padding: 15px 5px 15px 5px;
   font-size: 1em;
-  margin-top: 5px;
   transition: 0.3s;
 }
 
@@ -330,8 +336,7 @@ textarea {
 }
 
 .contact-box .send {
-  padding: 0.5em 1em;
-  margin-top: 1vh;
+  margin-top: 3vh;
   background-color: #04aa6d;
   color: #fff;
   font-size: 1.1em;
@@ -347,31 +352,15 @@ textarea {
   border-radius: 25px;
 }
 
-.contact-box #form {
+.contact-box form {
   box-shadow: 0px 8px 20px 3px;
-  border-radius: 4px;
+  border-radius: 0 0 4px 4px;
+  margin-bottom: 10vh;
 }
 
 .input-wrapper {
   min-height: 85px;
   position: relative;
-}
-
-/* --------------------------------------------created by------------------------------------------- */
-
-.created-by {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.33em;
-  width: 100%;
-  height: 7vh;
-  background: black;
-}
-
-.credit-text {
-  font-size: 22px;
-  color: #f9dd95;
 }
 
 /* -----------------------------------------------reading----------------------------------------- */
@@ -1127,8 +1116,8 @@ textarea {
 }
 
 .home-title {
-  /* font-size: 2em; */
-  font-size: 100%;
+  font-size: 2em;
+  /* font-size: 100%; */
 }
 
 .home-content {

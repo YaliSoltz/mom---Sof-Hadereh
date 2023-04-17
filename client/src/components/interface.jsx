@@ -6,13 +6,13 @@ import Bio from "./main/bio";
 import Lecture from "./main/lecture";
 import Sharing from "./main/sharing";
 import Reading from "./main/reading";
-import Footer from "./footer";
 import Page404 from "./main/page404";
 import Add from "./admin/add";
 import Home from "./main/home";
 import PersonalSharing from "./admin/personalSharing";
 import AdminContactUs from "./admin/contactUs";
 import ContactUs from "./main/contactUs";
+import CreatedBy from "./footer/createdBy";
 const Interface = ({ id }) => {
   
   return (
@@ -46,7 +46,7 @@ const Interface = ({ id }) => {
           }
         })()}
       </div>
-      <Footer />
+      <CreatedBy/>
     </div>
   );
 };
