@@ -18,7 +18,7 @@ const {
 
 mongoose.set("strictQuery", true);
 const app = express();
-const port = 10001;
+const port = 8001;
 
 app.use(cors());
 app.use(express.json({ limit: "20mb" }));
