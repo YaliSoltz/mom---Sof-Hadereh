@@ -21,7 +21,7 @@ const PersonalSharingProvider = ({ children }) => {
       console.log(data);
       setRefresh(!refresh);
     } catch (error) {
-      alert("שיתוף לא בוצע בהצלחה, אנא נסה שנית.");
+      return "error";
     }
   };
 

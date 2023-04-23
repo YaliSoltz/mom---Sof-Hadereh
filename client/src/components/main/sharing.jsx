@@ -17,7 +17,10 @@ const Sharing = () => {
   // function that add new PersonalSharing and reset the form
   const handleSubmit = async (e) => {
     e.preventDefault();
-    addNewPersonalSharing(newPersonalSharing);
+
+    if ((await addNewPersonalSharing(newPersonalSharing)) === "error")
+      return alert("שיתוף לא בוצע בהצלחה, אנא נסה שנית.");
+
     setSended(true);
   };
 
