@@ -24,9 +24,9 @@ a {
 }
 
 .Main {
-  min-height: 100vh;
+  min-height: 92vh;
   background: linear-gradient(to top, #98b9b4, #e4e4c0);
-  padding-top: 10vh;
+  padding: 14vh 0 6vh 0;
 }
 
 /* --------------------------------------------created by------------------------------------------- */
@@ -53,11 +53,10 @@ a {
   gap: 3em;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
-  padding-bottom: 3%;
 }
 
 .sharing-card {
-  height: 85vh;
+  height: 80vh;
   border-radius: 20px;
   overflow: hidden;
   border: 8px solid black;
@@ -107,7 +106,7 @@ a {
 
 /* -----------------------------------------navbar----------------------------------------------- */
 .Navbar {
-  height: 60px;
+  height: 8vh;
   width: 100%;
   display: flex;
   justify-content: baseline;
@@ -491,16 +490,6 @@ textarea {
   float: left;
   border-radius: 20px;
 }
-
-/* --------------------------------------------article-----------------------------------------
-
-.article-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  justify-items: center;
-  gap: 2em;
-} */
 
 /* -----------------------------------page 404------------------------------ */
 
