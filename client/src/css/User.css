@@ -1183,7 +1183,7 @@ textarea {
     transition: all 0.45s ease-in-out;
   }
   .nav-toggle > .bar::before {
-    width: 25px;
+    width: 32px;
     transform: translateY(-8px);
     right: 0;
   }
