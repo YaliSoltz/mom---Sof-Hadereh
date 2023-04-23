@@ -476,7 +476,6 @@ textarea {
 }
 
 .bio-text {
-  padding-top: 10vh;
   max-width: 80vw;
   font-size: large;
 }
@@ -485,7 +484,7 @@ textarea {
   height: 60vh;
   width: 30vw;
   object-fit: cover;
-  margin: 0 00 00 3vw;
+  margin: 0 0 0 3vw;
   float: left;
   border-radius: 20px;
 }
@@ -1102,7 +1101,6 @@ textarea {
 
 .home-title {
   font-size: 2em;
-  /* font-size: 100%; */
 }
 
 .home-content {
@@ -1110,14 +1108,14 @@ textarea {
   margin-left: 4vw;
 }
 
+.home-description {
+  margin-right: 4vw;
+}
+
 .home-img {
   margin-right: 4vw;
   border-radius: 30px;
   max-width: 100%;
-}
-
-.home-description {
-  margin-right: 4vw;
 }
 
 /* ------------------------carousel---------------------------- */
@@ -1224,6 +1222,15 @@ textarea {
 
   .modal-content {
     width: 60vw;
+  }
+
+  .home-content,
+  .home-description {
+    font-size: 1em;
+  }
+
+  .home-title {
+    font-size: 1.5em;
   }
 }
 
