@@ -7,11 +7,7 @@ const AdminContactUs = () => {
   const { contactUs, deleteContactUs } = useContext(ContactUsContext);
   const [refresh, setRefresh] = useState(false);
 
-  useEffect(() => {
-    if (refresh) {
-      window.location.reload();
-    }
-  }, [refresh]);
+  useEffect(() => {}, [refresh]);
 
   return (
     <div>

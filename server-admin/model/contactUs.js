@@ -5,18 +5,17 @@ const Joi = require("joi");
 const schema = new mongoose.Schema({
   name: {
     type: String,
-    min: 3,
     required: true,
   },
   phoneNumber: {
     type: String,
     min: 10,
-    max:10,
+    max: 10,
     required: true,
   },
   email: {
     type: String,
-    min: 3,
+    match: /.+\@.+\..+/,
     required: true,
   },
   subject: {
@@ -36,11 +35,11 @@ const ContactUs = mongoose.model("ContactUs", schema);
 
 // joi schema
 const joiSchema = Joi.object({
-  name: Joi.string().min(3).required(),
+  name: Joi.string().required(),
   phoneNumber: Joi.string().min(10).max(10).required(),
-  email: Joi.string().min(3).required().email(),
-  subject: Joi.string().min(3).required(),
-  content: Joi.string().min(3).required(),
+  email: Joi.string().required().email(),
+  subject: Joi.string().required(),
+  content: Joi.string().required(),
 });
 
 module.exports = { ContactUs, joiSchema };

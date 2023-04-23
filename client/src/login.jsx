@@ -19,10 +19,9 @@ const Login = () => {
     e.preventDefault();
     loader.style.display = "block";
 
-    const url = "http://localhost:8001/login";
+    const url = "https://backend-server-hasof-hatov.onrender.com/login";
     try {
       const { data } = await axios.post(url, user);
-      console.log(data);
       localStorage.setItem("x-auth-token", data);
       setToken(data);
       navigate("/");

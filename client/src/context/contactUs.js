@@ -21,7 +21,9 @@ const ContactUsProvider = ({ children }) => {
       console.log(data);
       setRefresh(!refresh);
       alert(" נשלח בהצלחה");
-    } catch (error) {}
+    } catch (error) {
+      alert('לא נשלח, אנא נסה שנית.')
+    }
   };
 
   // function that delete contactUs by id

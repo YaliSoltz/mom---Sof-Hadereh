@@ -25,7 +25,6 @@ const ContactUs = () => {
     setErrors(Validation(newContactUs)); // validate the inputs
     if (Object.keys(errors).length > 0) return;
     await addNewContactUs(newContactUs); // add newContactUs to database
-    document.getElementById("form").reset(); // reset the form
   };
 
   useEffect(() => {
@@ -54,7 +53,7 @@ const ContactUs = () => {
             className="field"
             placeholder="שם:"
             name="name"
-            pattern="[A-Za-zא-ת]+"
+            pattern="[A-Za-zא-ת -]+"
             title="ניתן להכניס אותיות בלבד"
             value={newContactUs.name}
             onChange={(e) =>

@@ -47,8 +47,8 @@ const SentenceProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getSentences(refresh);
-  }, []);
+    getSentences();
+  }, [refresh]);
 
   return (
     <SentenceContext.Provider
