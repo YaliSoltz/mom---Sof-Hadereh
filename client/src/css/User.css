@@ -170,7 +170,6 @@ a {
   transition: all 0.3s ease-in-out;
   border: 1px solid black;
   transition: all 0.3s ease-in-out;
-  z-index: 1;
 }
 
 .modal-open:hover {
@@ -1209,6 +1208,9 @@ textarea {
   }
   .card {
     min-width: 90vw;
+  }
+  .sharing-card {
+    width: 90vw;
   }
 
   .card-container,
