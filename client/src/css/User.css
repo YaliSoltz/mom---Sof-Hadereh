@@ -1226,11 +1226,12 @@ textarea {
 
   .home-content,
   .home-description {
-    font-size: 1em;
+    font-size: 12px;
   }
 
   .home-title {
-    font-size: 1.5em;
+    font-size: 22px;
+    margin-top: 0;
   }
 }
 
