@@ -6,7 +6,7 @@ export const LectureContext = createContext(); // the lecture context
 const LectureProvider = ({ children }) => {
   const [lectures, setLectures] = useState([]); // all the lectures
   const [refresh, setRefresh] = useState(false); // active useEffect on each axios
-  const url = "http://localhost:8001/api/lectures/";
+  const url = "https://backend-server-hasof-hatov.onrender.com/api/lectures/";
 
   // function that pulls all the lectures from the server
   const getLectures = async () => {

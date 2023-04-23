@@ -6,7 +6,7 @@ export const ContactUsContext = createContext(); // the contactUs context
 const ContactUsProvider = ({ children }) => {
   const [contactUs, setContactUs] = useState([]); // all the contactUs
   const [refresh, setRefresh] = useState(false); // active useEffect on each axios
-  const url = "http://localhost:8002/api/contactUs/";
+  const url = "https://backend-server-admin-hasof-hatov.onrender.com/api/contactUs/";
 
   // function that pulls all the contactUs from the server
   const getContactUs = async () => {

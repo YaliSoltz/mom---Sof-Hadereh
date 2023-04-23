@@ -6,7 +6,7 @@ export const PersonalSharingContext = createContext(); // the personalSharing co
 const PersonalSharingProvider = ({ children }) => {
   const [personalSharings, setPersonalSharings] = useState([]); // all the personalSharings
   const [refresh, setRefresh] = useState(false); // active useEffect on each axios
-  const url = "http://localhost:8002/api/personalSharings/";
+  const url = "https://backend-server-admin-hasof-hatov.onrender.com/api/personalSharings/";
 
   // function that pulls all the personalSharings from the server
   const getPersonalSharing = async () => {

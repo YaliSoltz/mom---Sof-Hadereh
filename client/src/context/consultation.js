@@ -6,7 +6,7 @@ export const ConsultationContext = createContext(); // the consultation context
 const ConsultationProvider = ({ children }) => {
   const [consultations, setConsultations] = useState([]); // all the consultations
   const [refresh, setRefresh] = useState(false); // active useEffect on each axios
-  const url = "http://localhost:8001/api/consultations/";
+  const url = "https://backend-server-hasof-hatov.onrender.com/api/consultations/";
 
   // function that pulls all the consultations from the server
   const getConsultations = async () => {

@@ -9,7 +9,7 @@ const ReadingProvider = ({ children }) => {
 
   const [readings, setReadings] = useState([]); // all the readings
   const [refresh, setRefresh] = useState(false); // active useEffect on each axios
-  const url = "http://localhost:8001/api/Readings/";
+  const url = "https://backend-server-hasof-hatov.onrender.com/api/Readings/";
 
   // function that pulls all the readings from the server
   const getReadings = async () => {

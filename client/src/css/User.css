@@ -1070,8 +1070,7 @@ textarea {
 
 .order {
   display: flex;
-  justify-content: center;
-  gap: 2em;
+  justify-content: space-between;
   position: relative;
 }
 .order .btn {
@@ -1079,8 +1078,6 @@ textarea {
   background: linear-gradient(to top, #98b9b4, #e4e4c0);
   padding: 0.5em 1.25em;
   border-radius: 0.25em;
-  position: absolute;
-  right: 0;
 }
 
 .order .icon {

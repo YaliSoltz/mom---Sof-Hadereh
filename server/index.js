@@ -27,7 +27,7 @@ app.use(morgan("tiny"));
 mongoose // connection to the database
   .connect(process.env.CONNECT_URL)
   .then(() => console.log("database connected successfully"))
-  .catch((err) => console.log(err.message));
+  .catch((err) => console.log("database failed to connect"));
 
 app.use("/api/lectures", lecture); //show the lecture route
 app.use("/api/consultations", consultation); //show the consultation route

@@ -6,7 +6,7 @@ export const SharingContext = createContext(); // the sharing context
 const SharingProvider = ({ children }) => {
   const [sharings, setSharings] = useState([]); // all the sharings
   const [refresh, setRefresh] = useState(false); // active useEffect on each axios
-  const url = "http://localhost:8001/api/sharings/";
+  const url = "https://backend-server-hasof-hatov.onrender.com/api/sharings/";
 
   // function that pulls all the sharings from the server
   const getSharings = async () => {
