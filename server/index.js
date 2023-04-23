@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const morgan = require("morgan");
-require('dotenv').config()
+require("dotenv").config();
 const {
   lecture,
   consultation,
@@ -18,16 +18,14 @@ const {
 
 mongoose.set("strictQuery", true);
 const app = express();
-const port = 8001;
+const port = process.env.PORT || 9001;
 
 app.use(cors());
 app.use(express.json({ limit: "20mb" }));
 app.use(morgan("tiny"));
 
 mongoose // connection to the database
-  .connect(
-    process.env.CONNECT_URL
-  )
+  .connect(process.env.CONNECT_URL)
   .then(() => console.log("database connected successfully"))
   .catch((err) => console.log("database failed to connect"));
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Page404 = () => {
   return (
     <div className="page404">
-      <h1>404 Error</h1>
+      <h1>שגיאה 404</h1>
       <h1>העמוד שאתם מחפשים לא קיים - לחזרה אל דף הבית לחצו על האוגר.</h1>
       <Link to="/">
         <div
