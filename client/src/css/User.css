@@ -3,10 +3,9 @@ body {
   overflow-x: hidden;
   word-wrap: break-word;
 }
-
-/* html {
-  scroll-behavior: smooth;
-} */
+* {
+  box-sizing: border-box;
+}
 
 p,
 textarea,
@@ -24,9 +23,9 @@ a {
 }
 
 .Main {
-  min-height: 92vh;
+  min-height: 100vh;
   background: linear-gradient(to top, #98b9b4, #e4e4c0);
-  padding: 14vh 0 6vh 0;
+  padding: 14vh 0 2rem 0;
 }
 
 /* --------------------------------------------created by------------------------------------------- */
@@ -50,9 +49,9 @@ a {
 .sharing-container {
   display: grid;
   justify-items: center;
-  gap: 3em;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
+  gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(max(25rem, 40vw), 1fr));
+  padding: 0 2rem;
 }
 
 .sharing-card {
@@ -91,18 +90,14 @@ a {
 
 .sharing-card-info {
   font-size: 18px;
-  line-height: 25px;
-  margin: 40px 0;
   font-weight: 400;
   overflow-y: auto;
   height: 480px;
-  padding: 0 20px 0 20px;
+  padding: 0 20px;
   border-top: 2px solid white;
 }
 
-.sharing-card-info::-webkit-scrollbar {
-  display: none;
-}
+
 
 /* -----------------------------------------navbar----------------------------------------------- */
 .Navbar {
@@ -312,9 +307,11 @@ textarea {
 }
 
 .contact-box .field {
-  width: 30vw;
+  width: 100%;
+  max-width: 100%;
   max-height: 12vh;
-  border: 2px solid rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
   background-color: rgba(230, 230, 230, 0.6);
   padding: 15px 5px 15px 5px;
   font-size: 1em;
@@ -327,6 +324,9 @@ textarea {
 
 .contact-box .field:focus {
   background-color: #fff;
+}
+.contact-box .field:focus::placeholder {
+  color: black;
 }
 
 .contact-box textarea::placeholder {
@@ -351,9 +351,9 @@ textarea {
 }
 
 .contact-box form {
+  width: min(30rem, 80%);
   box-shadow: 0px 8px 20px 3px;
   border-radius: 0 0 4px 4px;
-  margin-bottom: 10vh;
 }
 
 .input-wrapper {
@@ -866,9 +866,6 @@ textarea {
   align-items: center;
 }
 
-.sharing-card {
-  position: relative;
-}
 
 .add-sharing {
   position: absolute;
@@ -958,18 +955,20 @@ textarea {
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(max(20rem, 25vw), 1fr));
   justify-content: center;
   justify-items: center;
   gap: 2em;
+  padding: 0 2rem;
 }
 
 .card {
   color: white;
   background-size: cover;
   background-position: center;
-  padding: 10rem 0 0;
-  width: 30vw;
+  padding-top: 5em;
+  width: 100%;
+  height: 80vh;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 500ms ease;
@@ -1015,9 +1014,9 @@ textarea {
 
 .card-body {
   color: rgb(255 255 255 / 0.85);
-  height: 300px;
+  height: 40vh;
   overflow-y: auto;
-  margin-bottom: 10%;
+  margin-bottom: 6vh;
 }
 
 .card-body::-webkit-scrollbar {
@@ -1204,17 +1203,8 @@ textarea {
   .books-category {
     font-size: 1em;
   }
-  .card {
-    min-width: 90vw;
-  }
-  .sharing-card {
-    width: 90vw;
-  }
 
-  .card-container,
-  .sharing-container {
-    grid-template-columns: 1fr;
-  }
+
 
   .contact-box .field {
     width: 80vw;
