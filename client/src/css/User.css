@@ -97,8 +97,6 @@ a {
   border-top: 2px solid white;
 }
 
-
-
 /* -----------------------------------------navbar----------------------------------------------- */
 .Navbar {
   height: 8vh;
@@ -866,7 +864,6 @@ textarea {
   align-items: center;
 }
 
-
 .add-sharing {
   position: absolute;
   bottom: 0;
@@ -968,7 +965,6 @@ textarea {
   background-position: center;
   padding-top: 5em;
   width: 100%;
-  height: 80vh;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 500ms ease;
@@ -1004,7 +1000,8 @@ textarea {
   width: calc(100% + var(--padding));
   background: linear-gradient(to top, #98b9b4, #e4e4c0);
   transform-origin: right;
-  transition: transform 500ms ease;
+  transition:
+   /* transform  */ 500ms ease;
 }
 
 .card:hover .card-title::after,
@@ -1014,7 +1011,7 @@ textarea {
 
 .card-body {
   color: rgb(255 255 255 / 0.85);
-  height: 40vh;
+  height: 42vh;
   overflow-y: auto;
   margin-bottom: 6vh;
 }
@@ -1203,8 +1200,6 @@ textarea {
   .books-category {
     font-size: 1em;
   }
-
-
 
   .contact-box .field {
     width: 80vw;
